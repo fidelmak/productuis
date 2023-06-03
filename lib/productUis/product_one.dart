@@ -44,30 +44,49 @@ class _product_oneState extends State<product_one> {
         ),
         backgroundColor: const Color.fromARGB(255, 43, 41, 41),
       ),
-      body: ListView(
-        children: [
-          Container(
-            color: const Color.fromARGB(255, 43, 41, 41),
-            child: Row(
-              children: [
-                Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Discover",
-                          style: TextStyle(color: Colors.grey),
-                        ))),
-                Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Activities",
-                          style: TextStyle(color: Colors.grey),
-                        ))),
-              ],
+      body: Container(
+        color: Color.fromARGB(237, 0, 0, 0),
+        child: ListView(
+          children: [
+            Container(
+              color: Color.fromARGB(255, 0, 0, 0),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Discover",
+                            style: TextStyle(color: Colors.grey),
+                          ))),
+                  Expanded(
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Activities",
+                            style: TextStyle(color: Colors.grey),
+                          ))),
+                ],
+              ),
             ),
-          ),
-        ],
+            Card(
+              margin: EdgeInsets.all(7),
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Icon(Icons.book),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Nature's Light")
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
