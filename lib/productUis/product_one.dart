@@ -82,7 +82,67 @@ class _product_oneState extends State<product_one> {
                 ],
               ),
             ),
-            gradientCard(),
+            gradientCard(
+              icon: Icons.church_outlined,
+              text: "Nature's Light ",
+              image: AssetImage(
+                "assets/images/grtwall.jpg",
+              ),
+              width: 60,
+              height: 170,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    gradientCard(
+                      icon: Icons.church_outlined,
+                      text: "Nature's Light ",
+                      image: AssetImage(
+                        "assets/images/grtwall.jpg",
+                      ),
+                      width: 230,
+                      height: 200,
+                    ),
+                    gradientCard(
+                      icon: Icons.church_outlined,
+                      text: "Nature's Light ",
+                      image: AssetImage(
+                        "assets/images/grtwall.jpg",
+                      ),
+                      width: 230,
+                      height: 200,
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    gradientCard(
+                      icon: Icons.church_outlined,
+                      text: "Nature's Light ",
+                      image: AssetImage(
+                        "assets/images/grtwall.jpg",
+                      ),
+                      width: 230,
+                      height: 200,
+                    ),
+                    gradientCard(
+                      icon: Icons.church_outlined,
+                      text: "Nature's Light ",
+                      image: AssetImage(
+                        "assets/images/grtwall.jpg",
+                      ),
+                      width: 230,
+                      height: 200,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       ),
@@ -91,9 +151,17 @@ class _product_oneState extends State<product_one> {
 }
 
 class gradientCard extends StatelessWidget {
-  const gradientCard({
-    super.key,
-  });
+  gradientCard(
+      {required this.icon,
+      required this.text,
+      required this.image,
+      required this.width,
+      required this.height});
+  final IconData icon;
+  final text;
+  final AssetImage image;
+  final width;
+  final height;
 
   @override
   Widget build(BuildContext context) {
@@ -103,13 +171,11 @@ class gradientCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.0),
         child: Container(
-          width: 60,
-          height: 170,
+          width: width,
+          height: height,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
-                "assets/images/grtwall.jpg",
-              ),
+              image: image,
               fit: BoxFit.cover,
             ),
           ),
@@ -129,7 +195,7 @@ class gradientCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
-                    Icons.church_outlined,
+                    icon,
                     color: Colors.white,
                     size: 27,
                   ),
@@ -137,7 +203,7 @@ class gradientCard extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "Nature's Light",
+                    text,
                     style: TextStyle(color: Colors.white),
                   )
                 ],
