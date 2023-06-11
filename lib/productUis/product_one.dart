@@ -21,7 +21,6 @@ class _product_oneState extends State<product_one> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -93,24 +92,26 @@ class _product_oneState extends State<product_one> {
               // height: 170,
             ),
             Container(
-              margin: EdgeInsets.all(16.0),
+              //margin: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
                     children: [
                       Container(
+                        width: 180,
                         child: gradientCard(
                           icon: Icons.church_outlined,
                           text: "Cultural",
                           image: AssetImage(
                             "assets/images/grtwall.jpg",
                           ),
-                          // width: 230,
+
                           // height: 200,
                         ),
                       ),
                       Container(
+                        width: 180,
                         height: 240,
                         child: gradientCard(
                           icon: Icons.mosque_outlined,
@@ -125,6 +126,7 @@ class _product_oneState extends State<product_one> {
                   Column(
                     children: [
                       Container(
+                        width: 180,
                         height: 240,
                         child: gradientCard(
                           icon: Icons.church_outlined,
@@ -137,6 +139,7 @@ class _product_oneState extends State<product_one> {
                         ),
                       ),
                       Container(
+                        width: 180,
                         child: gradientCard(
                           icon: Icons.wb_sunny_outlined,
                           text: "Sun Sand ",
@@ -152,9 +155,37 @@ class _product_oneState extends State<product_one> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 50,
-            )
+            Expanded(
+                child: Container(
+              height: 60,
+              color: Color.fromARGB(
+                  255, 27, 26, 26), // Background color of the footer
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(
+                    Icons.home,
+                    color: Colors.white, // White color
+                    // Add other properties as needed, e.g., size
+                  ),
+                  Icon(
+                    Icons.explore,
+                    color: Colors.white, // White color
+                    // Add other properties as needed, e.g., size
+                  ),
+                  Icon(
+                    Icons.message_outlined,
+                    color: Colors.white, // White color
+                    // Add other properties as needed, e.g., size
+                  ),
+                  Icon(
+                    Icons.verified_user_outlined,
+                    color: Colors.white, // White color
+                    // Add other properties as needed, e.g., size
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),
@@ -198,8 +229,8 @@ class gradientCard extends StatelessWidget {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Colors.pink.withOpacity(0.6),
-                Colors.orange.withOpacity(0.6),
+                Color.fromARGB(255, 245, 79, 2).withOpacity(0.8),
+                Color.fromARGB(255, 73, 2, 80).withOpacity(0.8),
               ],
             )),
             child: Padding(
