@@ -21,6 +21,7 @@ class _product_oneState extends State<product_one> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -88,57 +89,68 @@ class _product_oneState extends State<product_one> {
               image: AssetImage(
                 "assets/images/grtwall.jpg",
               ),
-              width: 60,
-              height: 170,
+              // width: 60,
+              // height: 170,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    gradientCard(
-                      icon: Icons.church_outlined,
-                      text: "Nature's Light ",
-                      image: AssetImage(
-                        "assets/images/grtwall.jpg",
+            Container(
+              margin: EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        child: gradientCard(
+                          icon: Icons.church_outlined,
+                          text: "Cultural",
+                          image: AssetImage(
+                            "assets/images/grtwall.jpg",
+                          ),
+                          // width: 230,
+                          // height: 200,
+                        ),
                       ),
-                      width: 230,
-                      height: 200,
-                    ),
-                    gradientCard(
-                      icon: Icons.church_outlined,
-                      text: "Nature's Light ",
-                      image: AssetImage(
-                        "assets/images/grtwall.jpg",
+                      Container(
+                        height: 240,
+                        child: gradientCard(
+                          icon: Icons.mosque_outlined,
+                          text: "Popularity",
+                          image: AssetImage(
+                            "assets/images/grtwall.jpg",
+                          ),
+                        ),
                       ),
-                      width: 230,
-                      height: 200,
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    gradientCard(
-                      icon: Icons.church_outlined,
-                      text: "Nature's Light ",
-                      image: AssetImage(
-                        "assets/images/grtwall.jpg",
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 240,
+                        child: gradientCard(
+                          icon: Icons.church_outlined,
+                          text: "Modern Life",
+                          image: AssetImage(
+                            "assets/images/grtwall.jpg",
+                          ),
+                          // width: 230,
+                          // height: 200,
+                        ),
                       ),
-                      width: 230,
-                      height: 200,
-                    ),
-                    gradientCard(
-                      icon: Icons.church_outlined,
-                      text: "Nature's Light ",
-                      image: AssetImage(
-                        "assets/images/grtwall.jpg",
+                      Container(
+                        child: gradientCard(
+                          icon: Icons.wb_sunny_outlined,
+                          text: "Sun Sand ",
+                          image: AssetImage(
+                            "assets/images/grtwall.jpg",
+                          ),
+                          // width: 230,
+                          // height: 200,
+                        ),
                       ),
-                      width: 230,
-                      height: 200,
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 50,
@@ -151,17 +163,18 @@ class _product_oneState extends State<product_one> {
 }
 
 class gradientCard extends StatelessWidget {
-  gradientCard(
-      {required this.icon,
-      required this.text,
-      required this.image,
-      required this.width,
-      required this.height});
+  gradientCard({
+    required this.icon,
+    required this.text,
+    required this.image,
+    // required this.width,
+    // required this.height
+  });
   final IconData icon;
   final text;
   final AssetImage image;
-  final width;
-  final height;
+  // final width;
+  // final height;
 
   @override
   Widget build(BuildContext context) {
@@ -171,8 +184,8 @@ class gradientCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.0),
         child: Container(
-          width: width,
-          height: height,
+          // width: width,
+          // height: height,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: image,
