@@ -101,10 +101,10 @@ class _product_oneState extends State<product_one> {
                       Container(
                         width: 180,
                         child: gradientCard(
-                          icon: Icons.church_outlined,
+                          icon: Icons.masks_outlined,
                           text: "Cultural",
                           image: AssetImage(
-                            "assets/images/grtwall.jpg",
+                            "assets/images/cuba.jpeg",
                           ),
 
                           // height: 200,
@@ -117,7 +117,7 @@ class _product_oneState extends State<product_one> {
                           icon: Icons.mosque_outlined,
                           text: "Popularity",
                           image: AssetImage(
-                            "assets/images/grtwall.jpg",
+                            "assets/images/greek.jpeg",
                           ),
                         ),
                       ),
@@ -132,7 +132,7 @@ class _product_oneState extends State<product_one> {
                           icon: Icons.church_outlined,
                           text: "Modern Life",
                           image: AssetImage(
-                            "assets/images/grtwall.jpg",
+                            "assets/images/city.jpeg",
                           ),
                           // width: 230,
                           // height: 200,
@@ -144,7 +144,7 @@ class _product_oneState extends State<product_one> {
                           icon: Icons.wb_sunny_outlined,
                           text: "Sun Sand ",
                           image: AssetImage(
-                            "assets/images/grtwall.jpg",
+                            "assets/images/mercury.jpeg",
                           ),
                           // width: 230,
                           // height: 200,
