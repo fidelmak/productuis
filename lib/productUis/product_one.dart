@@ -8,7 +8,10 @@ class product_one extends StatefulWidget {
   State<product_one> createState() => _product_oneState();
 }
 
+enum Choice { Discover, Activities }
+
 class _product_oneState extends State<product_one> {
+  Choice? SelectedChoice;
   final lightTheme = ThemeData(
     primaryColor: Colors.grey,
     hintColor: const Color.fromARGB(255, 43, 41, 41),
@@ -41,13 +44,25 @@ class _product_oneState extends State<product_one> {
                 ),
               ),
               IconButton(
-                onPressed: () {},
-                color: Colors.grey,
+                onPressed: () {
+                  setState(() {
+                    SelectedChoice = Choice.Discover;
+                  });
+                },
+                color: SelectedChoice == Choice.Discover
+                    ? Colors.grey
+                    : Colors.red,
                 icon: Icon(Icons.notifications_outlined),
               ),
               IconButton(
-                onPressed: () {},
-                color: Colors.grey,
+                onPressed: () {
+                  setState(() {
+                    SelectedChoice = Choice.Activities;
+                  });
+                },
+                color: SelectedChoice == Choice.Discover
+                    ? Colors.red
+                    : Colors.grey,
                 icon: Icon(Icons.search),
               ),
             ],
@@ -65,19 +80,33 @@ class _product_oneState extends State<product_one> {
                 children: [
                   Expanded(
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              SelectedChoice = Choice.Discover;
+                            });
+                          },
                           child: Text(
                             "Discover",
                             style: TextStyle(
-                              color: Colors.grey,
+                              color: SelectedChoice == Choice.Discover
+                                  ? Colors.grey
+                                  : Colors.red,
                             ),
                           ))),
                   Expanded(
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              SelectedChoice = Choice.Activities;
+                            });
+                          },
                           child: Text(
                             "Activities",
-                            style: TextStyle(color: Colors.grey),
+                            style: TextStyle(
+                              color: SelectedChoice == Choice.Discover
+                                  ? Colors.red
+                                  : Colors.grey,
+                            ),
                           ))),
                 ],
               ),
