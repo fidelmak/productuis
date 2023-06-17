@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:productuis/responso/responso.dart';
 import './productUis/constants.dart';
 
 void main() {
@@ -10,15 +12,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Product UIs',
-      theme: ThemeData(
-        // backgroundColor: const Color.fromARGB(255, 43, 41, 41),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: product_one(),
+    return ScreenUtilInit(
+      designSize: Size(360, 690),
+      builder: (BuildContext context, Widget? child) {
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Product UIs',
+            theme: ThemeData(
+              // backgroundColor: const Color.fromARGB(255, 43, 41, 41),
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            home: HomePage() //product_one() // //,
+            );
+      },
     );
   }
 }
